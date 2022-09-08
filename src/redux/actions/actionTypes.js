@@ -1,0 +1,8 @@
+//POSTS
+export const SET_POSTS = "SET_POSTS";
+export const SET_POST_PAGE = "SET_POST_PAGE";
+
+// PAGINATION
+export const INCREMENT_PAGE = "INCREMENT_PAGE";
+export const DECREMENT_PAGE = "DECREMENT_PAGE";
+
