@@ -5,7 +5,7 @@ import { Route, Routes, BrowserRouter as Router, Switch, BrowserRouter } from "r
 import './App.css';
 
 import Landing from './atomic-design/pages/LandingPage/Landing';
-import PostDetailPage from './atomic-design/pages/PostDetailPage/PostDetailPage';
+import CharacterDetailsPage from './atomic-design/pages/PostDetailPage/CharacterDetailsPage';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Landing />} />
-          <Route exact path="/:id" element={<PostDetailPage />} />
+          <Route exact path="/:id" element={<CharacterDetailsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

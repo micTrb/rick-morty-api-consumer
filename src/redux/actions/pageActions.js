@@ -1,15 +1,16 @@
-import { INCREMENT_PAGE, DECREMENT_PAGE } from "./actionTypes"
+import { SET_PAGE } from "./actionTypes"
 
 
-export const incrementPageAction = () => {
+export const setPageAction = (pageInfos) => {
   return {
-    type: INCREMENT_PAGE,
+    type: SET_PAGE,
+    payload: pageInfos
   }
+
 }
 
-
-export const decrementPageAction = () => {
-  return {
-    type: DECREMENT_PAGE,
-  }
-}
+// export const decrementPageAction = () => {
+//   return {
+//     type: DECREMENT_PAGE,
+//   }
+// }

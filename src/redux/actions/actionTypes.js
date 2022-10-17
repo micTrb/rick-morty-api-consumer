@@ -1,8 +1,11 @@
 //POSTS
-export const SET_POSTS = "SET_POSTS";
-export const SET_POST_PAGE = "SET_POST_PAGE";
+export const SET_CHARACTERS = "SET_CHARACTERS";
+export const SET_CHARACTER_PAGE = "SET_CHARACTER_PAGE";
 
 // PAGINATION
+
+export const SET_PAGE = "SET_PAGE";
+
 export const INCREMENT_PAGE = "INCREMENT_PAGE";
 export const DECREMENT_PAGE = "DECREMENT_PAGE";
 

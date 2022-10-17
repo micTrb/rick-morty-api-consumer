@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPost } from "../../../requests-methods/rooms";
+import { getCharacter } from "../../../requests-methods/characters";
 import { dateFormatterSlash } from "../../../utils/date/dateFormatter";
 
 const DetailedCard = (props) => {

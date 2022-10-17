@@ -26,13 +26,10 @@ const CustomCard = (props) => {
   const {
     id,
     name,
-    postType,
-    imgUrl,
-    address,
-    price,
-    mq,
-    availableFrom,
-    status
+    status,
+    species,
+    gender,
+    image
   } = props;
 
 
@@ -40,26 +37,20 @@ const CustomCard = (props) => {
   return (
     <div className="text-start bg-white shadow-lg border-b-8 border-indigo-500 max-w-sm">
       <Link to={"/" + id}>
-        <img className="rounded-t-lg" src={imgUrl} alt="" />
+        <img className="rounded-t-lg" src={image} alt="" />
       </Link>
       <div className="p-5">
         <Link to={"/" + id} >
           <h3 className="pb-4 text-gray-900 border-b border-gray-500 font-bold text-3xl tracking-tight mb-2">{name}</h3>
         </Link>
         <p className="pt-4 font-normal text-gray-700 mb-3">
-          <b>Available From: </b>{dateFormatterSlash(availableFrom)}
+          <b>Status </b>{status}
         </p>
         <p className="font-normal text-gray-700 mb-3">
-          <b>Price: </b>{price} <b>€</b>
+          <b>Species: </b>{species}
         </p>
         <p className="font-normal text-gray-700 mb-3">
-          <b>Address: </b> {address.addressRoute + " " + address.addressZipCode + " " + address.addressCity}
-        </p>
-        <p className="font-normal text-gray-700 mb-3">
-          <b>MQ: </b>{mq}
-        </p>
-        <p className="font-normal text-gray-700 mb-3">
-          <b>Status: </b>{(status === 2 ? "Available" : "Not available")}
+          <b>Gender: </b> {gender}
         </p>
 
         <Link to={"/" + id} className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-3 py-2 mt-6 text-center inline-flex items-center'>

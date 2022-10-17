@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import postsReducer from './postsReducer';
+import charactersReducer from './charactersReducer';
 import pageReducer from './pageReducer';
 
 const rootReducer = combineReducers({
-  posts: postsReducer,
+  characters: charactersReducer,
   page: pageReducer
 });
 

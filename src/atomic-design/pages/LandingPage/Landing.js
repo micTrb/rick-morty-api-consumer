@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getList } from "../../../requests-methods/rooms";
-import PostsGrid from "../../organisms/Grid/PostsGrid";
+import { getCharactersList } from "../../../requests-methods/characters";
+import CharactersGrid from "../../organisms/Grid/CharactersGrid";
 import Paginator from '../../molecules/Paginator/Paginator';
 
 const Landing = () => {
   const dispatch = useDispatch();
-  const postsList = useSelector(state => state.posts.postsList);
-  const pageNumber = useSelector(state => state.page.pageNumber);
+  const charactersList = useSelector(state => state.characters.charactersList);
 
   useEffect(() => {
-    dispatch(getList(pageNumber));
+    dispatch(getCharactersList());
   }, [dispatch])
 
 
@@ -21,9 +20,8 @@ const Landing = () => {
       <h5 className="text-center text-gray-900 font-semibold text-6xl py-8">
         Roomless app
       </h5>
-
-      <PostsGrid posts={postsList} />
       <Paginator />
+      <CharactersGrid characters={charactersList} />
 
     </div>
   );
