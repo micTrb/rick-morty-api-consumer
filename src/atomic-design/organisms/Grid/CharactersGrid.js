@@ -16,6 +16,7 @@ const CharactersGrid = ({ characters }) => {
                     location={c.location}
                     origin={c.origin}
                     epidode={c.episode}
+                    url={c.url}
                 />)
             }
 

@@ -19,8 +19,8 @@ function App() {
           <Route exact path="/characters" element={<CharactersPage />} />
           <Route exact path="/characters/:id" element={<CharacterDetailsPage />} />
 
-          <Route exact path="/location" element={<LocationsPage />} />
-          <Route exact path="/location/:name" element={<LocationDetailsPage />} />
+          <Route exact path="/locations" element={<LocationsPage />} />
+          <Route exact path="/locations/:name" element={<LocationDetailsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

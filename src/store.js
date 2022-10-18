@@ -13,7 +13,7 @@ const persistConfig = {
   storage: storage,
   //stateReconciler: autoMergeLevel2, // see "Merge Process" section for details.
   //whitelist: ['posts'],
-  //blacklist: ['page'],
+  blacklist: [],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

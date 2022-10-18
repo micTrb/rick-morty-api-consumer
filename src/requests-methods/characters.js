@@ -1,6 +1,7 @@
 import axios from "axios";
-import { setCharacterPageAction, setCharactersAction, addResidentAction } from '../redux/actions/charactersActions';
+import { setCharacterPageAction, setCharactersAction, addResidentAction, setCharacterDetailsAction } from '../redux/actions/charactersActions';
 import { setPageAction } from '../redux/actions/pageActions';
+import history from '../services/history';
 
 //Paths
 const charactersURL = process.env.REACT_APP_CHARACTERS_URL;
@@ -59,12 +60,31 @@ export const getCharacter = (id) => dispatch => {
   })
     .then((response) => {
       console.log(response);
-      dispatch(setCharacterPageAction(response.data));
+      dispatch(setCharacterDetailsAction(response.data));
     })
     .catch(function (error) {
       console.log(error);
     });
 };
+
+export const getCharacterDetailsGET = (id, url) => dispatch => {
+  console.log(url);
+  axios({
+    method: 'get',
+    url: url
+  })
+    .then((response) => {
+
+      console.log(response.data);
+      dispatch(setCharacterDetailsAction(response.data));
+      history.push("/characters/" + id);
+      history.go();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
 
 
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCharacter } from "../../../requests-methods/characters";
+import { getCharacterFromUrl } from "../../../requests-methods/characters";
 import DetailsCard from '../../molecules/DetailsCard/DetailsCard';
 import { useLocation } from 'react-router-dom';
 
@@ -10,19 +10,16 @@ const CharacterDetailsPage = () => {
   const location = useLocation();
   const id = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
 
-  useEffect(() => {
-    dispatch(getCharacter(id));
-  }, [dispatch])
+
+  const characterDetailsUrl = useSelector(state => state.characters.characterDetailsUrl);
+  const characterDetails = useSelector(state => state.characters.characterDetails);
 
  
-  const characterDetailsPage = useSelector(state => state.characters.characterPage);
-  console.log(characterDetailsPage);
-
   return (
     <div className="py-24 px-12">
       <div className="lg:w-full mx-auto">
         <DetailsCard
-          characterDetails={characterDetailsPage}
+          characterDetails={characterDetails}
         /> 
       </div>
     </div>

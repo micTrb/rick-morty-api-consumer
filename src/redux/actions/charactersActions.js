@@ -1,6 +1,6 @@
 
 import {
-  SET_CHARACTERS, SET_CHARACTER_PAGE, ADD_RESIDENT, CLEAR_RESIDENTS
+  SET_CHARACTERS, SET_CHARACTER_DETAILS, SET_CHARACTER_DETAILS_URL, ADD_RESIDENT, CLEAR_RESIDENTS
 } from "./actionTypes";
 
 
@@ -11,13 +11,22 @@ export const setCharactersAction = (chars) => {
   }
 }
 
-
-export const setCharacterPageAction = (charPage) => {
+export const setCharacterDetailsAction = (charDetails) => {
   return {
-    type: SET_CHARACTER_PAGE,
-    payload: charPage
+    type: SET_CHARACTER_DETAILS,
+    payload: charDetails
   }
 }
+
+export const setCharacterDetailsUrlAction = (url) => {
+  return {
+    type: SET_CHARACTER_DETAILS_URL,
+    payload: url
+  }
+}
+
+
+
 
 
 export const addResidentAction = (resident) => {

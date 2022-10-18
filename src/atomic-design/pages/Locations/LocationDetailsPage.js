@@ -5,6 +5,8 @@ import DetailsCard from '../../molecules/DetailsCard/DetailsCard';
 import { useLocation } from 'react-router-dom';
 import LocationDetails from '../../molecules/LocationDetails/LocationDetails';
 import { getLocation } from '../../../requests-methods/locations';
+import { clearResidentsAction } from '../../../redux/actions/charactersActions';
+import { clearLocationAction } from "../../../redux/actions/locationActions";
 
 const LocationDetailsPage = () => {
   const dispatch = useDispatch();
@@ -14,6 +16,8 @@ const LocationDetailsPage = () => {
 
 
   useEffect(() => {
+    dispatch(clearLocationAction());
+    dispatch(clearResidentsAction());
     dispatch(getLocation(locationDetailsURL));
   }, [dispatch])
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import classnames from "classnames";
-import { getLocation } from '../../../requests-methods/locations';
+import { getLocation, getLocationDetailsGET } from '../../../requests-methods/locations';
 import { Link } from 'react-router-dom';
 import { setLocationDetailsUrlAction } from '../../../redux/actions/locationActions';
 import history from '../../../services/history';
@@ -22,11 +22,8 @@ const DetailsCard = (props) => {
 
   const dispatch = useDispatch();
 
-
-  const handleSetLocationDetailsURL = () => {
-    dispatch(setLocationDetailsUrlAction(origin.url));
-    history.push('/location/' + origin.name);
-    history.go();
+  const handleGetLocationDetails = () => {
+    dispatch(getLocationDetailsGET(origin.name, origin.url));
   }
 
 
@@ -52,7 +49,7 @@ const DetailsCard = (props) => {
             <span className="font-bold">Species: </span>{species}
           </p>
 
-            <p onClick={handleSetLocationDetailsURL} className="hover:underline cursor-pointer text-white text-start text-xl py-2">
+            <p onClick={handleGetLocationDetails} className="hover:underline cursor-pointer text-white text-start text-xl py-2">
               <span className="font-bold">Origin: </span>{origin.name}
             </p>
         </div>

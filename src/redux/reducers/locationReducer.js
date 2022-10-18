@@ -1,5 +1,5 @@
 import {
-  SET_LOCATIONS, SET_LOCATION_PAGE, SET_LOCATION_DETAILS_URL
+  SET_LOCATIONS, SET_LOCATION_PAGE, SET_LOCATION_DETAILS_URL, CLEAR_LOCATION
 } from "../actions/actionTypes";
 
 
@@ -14,6 +14,9 @@ export default function locationReducer(state = initialState, action) {
 
     case SET_LOCATIONS:
       return Object.assign({}, state, { locationList: action.payload });
+
+    case CLEAR_LOCATION:
+      return Object.assign({}, state, { locationPage: {} });
 
     case SET_LOCATION_PAGE:
       return Object.assign({}, state, { locationPage: action.payload });

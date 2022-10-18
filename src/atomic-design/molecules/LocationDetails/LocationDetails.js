@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { addCharacterFromUrl } from "../../../requests-methods/characters";
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { clearResidentsAction } from "../../../redux/actions/charactersActions";
 
 const LocationDetails = (props) => {
 
@@ -16,9 +18,9 @@ const LocationDetails = (props) => {
   const locationResidents = useSelector(state => state.characters.residents);
 
 
-  let resArray = [];
-
   useEffect(() => {
+    console.log(props.locationDetails);
+    
     residents.map(r => {
       dispatch(addCharacterFromUrl(r));
     });
@@ -44,19 +46,18 @@ const LocationDetails = (props) => {
 
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
 
-            <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+            <div className="grid md:grid-cols-3 xl:grid-cols-4 gap-x-6 lg:gap-xl-12">
 
               {locationResidents.map((r) =>
-              <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                  <img className="w-full rounded-full sm:rounded-none sm:rounded-l-lg" src={r.image} alt="Avatar" />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Bonnie Green</a>
-                  </h3>
-                </div>
-              </div>
+
+                <Link key={r.id} to={"/characters/" + r.id} className="cursor-pointer">
+                  <div className="mb-12">
+                    <img  src={r.image} class="w-12 h-12 rounded-full mx-auto shadow-lg mb-4" alt=""/>
+
+                    <p className="font-bold mb-2">{r.name}</p>
+                    <p className="text-gray-500">{r.species}</p>
+                  </div>
+                </Link>
               )}
 
 

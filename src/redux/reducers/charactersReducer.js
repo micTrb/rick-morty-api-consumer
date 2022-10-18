@@ -1,11 +1,12 @@
 import {
-  SET_CHARACTERS, SET_CHARACTER_PAGE, ADD_RESIDENT, CLEAR_RESIDENTS
+  SET_CHARACTERS, SET_CHARACTER_DETAILS_URL, ADD_RESIDENT, CLEAR_RESIDENTS, SET_CHARACTER_DETAILS
 } from "../actions/actionTypes";
 
 
 const initialState = {
   charactersList: [],
-  characterPage: {},
+  characterDetails: {},
+  characterDetailsUrl: "",
   residents: [],
 };
 
@@ -15,8 +16,11 @@ export default function charactersReducer(state = initialState, action) {
     case SET_CHARACTERS:
       return Object.assign({}, state, { charactersList: action.payload });
 
-    case SET_CHARACTER_PAGE:
-      return Object.assign({}, state, { characterPage: action.payload });
+    case SET_CHARACTER_DETAILS_URL:
+        return Object.assign({}, state, { characterDetailsUrl: action.payload });
+
+    case SET_CHARACTER_DETAILS:
+      return Object.assign({}, state, { characterDetails: action.payload });
 
     case ADD_RESIDENT:
       return Object.assign({}, state, {

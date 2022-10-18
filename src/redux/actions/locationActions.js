@@ -1,6 +1,6 @@
 
 import {
-    SET_LOCATIONS, SET_LOCATION_PAGE, SET_LOCATION_DETAILS_URL
+    SET_LOCATIONS, SET_LOCATION_PAGE, SET_LOCATION_DETAILS_URL, CLEAR_LOCATION
   } from "./actionTypes";
   
   
@@ -10,7 +10,7 @@ import {
       payload: loc
     }
   }
-  
+
   
   export const setLocationPageAction = (loc) => {
     return {
@@ -23,5 +23,12 @@ import {
     return {
       type: SET_LOCATION_DETAILS_URL,
       payload: url
+    }
+  }
+
+
+  export const clearLocationAction = () => {
+    return {
+      type: CLEAR_LOCATION
     }
   }
