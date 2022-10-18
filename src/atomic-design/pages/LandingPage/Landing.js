@@ -1,28 +1,26 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
-import { getCharactersList } from "../../../requests-methods/characters";
-import CharactersGrid from "../../organisms/Grid/CharactersGrid";
-import Paginator from '../../molecules/Paginator/Paginator';
+import '../../../style/global.css';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
-  const dispatch = useDispatch();
-  const charactersList = useSelector(state => state.characters.charactersList);
-
-  useEffect(() => {
-    dispatch(getCharactersList());
-  }, [dispatch])
 
 
 
   return (
-    <div className="container px-2 py-24 mx-auto">
-      <h5 className="text-center text-gray-900 font-semibold text-6xl py-8">
-        Roomless app
+    <div className="container px-2 pt-24 pb-96 mx-auto text-white">
+      <h5 className="title text-center font-semibold text-6xl py-8">       
+        Rick and Morty
       </h5>
-      <Paginator />
-      <CharactersGrid characters={charactersList} />
+      <h5 className="text-center sm:text-6xl text-4xl">
+        Api Consumer
+      </h5>
 
+      <div className="text-center font-semibold sm:text-4xl text-5xl pt-24">
+        <Link to="/characters"><p className="link-par text-center p-4">Characters</p></Link>
+        <Link to="/characters"><p className="link-par text-center p-4">Locations</p></Link>
+        <Link to="/characters"><p className="link-par text-center p-4">Episodes</p></Link>
+      </div>
     </div>
   );
 

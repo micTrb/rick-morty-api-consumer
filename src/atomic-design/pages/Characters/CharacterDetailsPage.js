@@ -18,10 +18,8 @@ const CharacterDetailsPage = () => {
 
   return (
     <div className="py-24 px-12">
-      <div className="lg:w-full mx-auto flex flex-wrap">
-        <h5 className="text-start text-gray-900 underline font-normal text-5xl py-8 px-8">
-          <a href="/">← Back to posts</a>
-        </h5>
+      <div className="lg:w-full mx-auto">
+
         <DetailsCard
           characterDetails={characterDetailsPage}
         /> 

@@ -3,7 +3,7 @@ import CustomCard from '../../molecules/Card/CustomCard';
 
 const CharactersGrid = ({ characters }) => {
     return (
-        <div className="pt-12 px-24 flex-col md:flex-row gap-8 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center">
+        <div className="pt-12 xl:px-12 lg:px-36 px-12 flex-col md:flex-row gap-4 grid grid-cols-1 xl:grid-cols-2 justify-center">
             {characters.map((c) =>
                 <CustomCard
                     id={c.id}
@@ -13,6 +13,8 @@ const CharactersGrid = ({ characters }) => {
                     status={c.status}
                     gender={c.gender}
                     species={c.species}
+                    origin={c.origin}
+                    epidode={c.episode}
                 />)
             }
 

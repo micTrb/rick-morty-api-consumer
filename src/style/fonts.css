@@ -1,0 +1,10 @@
+
+@font-face {
+    font-family: 'Schwifty';
+    src: local('Schwifty'), url(../fonts/Schwifty/get_schwifty.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+}
