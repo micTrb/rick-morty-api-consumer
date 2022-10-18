@@ -13,6 +13,7 @@ const CharactersGrid = ({ characters }) => {
                     status={c.status}
                     gender={c.gender}
                     species={c.species}
+                    location={c.location}
                     origin={c.origin}
                     epidode={c.episode}
                 />)

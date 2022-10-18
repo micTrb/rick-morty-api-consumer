@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import classnames from "classnames";
-import { getLocations } from '../../../requests-methods/locations';
+import { getLocation } from '../../../requests-methods/locations';
+import { Link } from 'react-router-dom';
+import { setLocationDetailsUrlAction } from '../../../redux/actions/locationActions';
+import history from '../../../services/history';
 
 const DetailsCard = (props) => {
 
@@ -13,21 +16,18 @@ const DetailsCard = (props) => {
     image,
     gender,
     origin,
+    location,
     episode
   } = props.characterDetails;
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
 
-  }, )
-
-
-  const handleGetLocations = () => {
-    dispatch(getLocations(origin.url));
+  const handleSetLocationDetailsURL = () => {
+    dispatch(setLocationDetailsUrlAction(origin.url));
+    history.push('/location/' + origin.name);
+    history.go();
   }
-
-
 
 
   return (
@@ -52,11 +52,9 @@ const DetailsCard = (props) => {
             <span className="font-bold">Species: </span>{species}
           </p>
 
-          <p onClick={handleGetLocations} className="hover:underline cursor-pointer text-white text-start text-xl py-2">
-            <span className="font-bold">Origin: </span>{origin.name}
-          </p>
-
-
+            <p onClick={handleSetLocationDetailsURL} className="hover:underline cursor-pointer text-white text-start text-xl py-2">
+              <span className="font-bold">Origin: </span>{origin.name}
+            </p>
         </div>
       </div>
     </div>

@@ -1,21 +1,18 @@
 import axios from "axios";
-import { setLocationPageAction } from "../redux/actions/locationActions";
-import history from '../services/history';
+import { setLocationsAction, setLocationPageAction } from '../redux/actions/locationActions';
+
 
 //Paths
-// const locationsURL = process.env.REACT_APP_LOCATION_URL;
+const locationURL = process.env.REACT_APP_LOCATION_URL;
 
-export const getLocations = (locationsURL) => dispatch => {
-   console.log(locationsURL)
 
+export const getLocation = (locationDetailsUrl) => dispatch => {
   axios({
     method: 'get',
-    url: locationsURL,
+    url: locationDetailsUrl
   })
     .then((response) => {
-        console.log(response.data)
-        dispatch(setLocationPageAction(response.data));
-        history.push('/locations/'+ response.data.id)
+      dispatch(setLocationPageAction(response.data));
     })
     .catch(function (error) {
       console.log(error);

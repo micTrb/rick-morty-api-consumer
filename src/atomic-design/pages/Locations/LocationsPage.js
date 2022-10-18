@@ -7,12 +7,12 @@ import { getCharactersList } from "../../../requests-methods/characters";
 import CharactersGrid from "../../organisms/Grid/CharactersGrid";
 import Paginator from '../../molecules/Paginator/Paginator';
 
-const CharactersPage = () => {
+const LocationsPage = () => {
   const dispatch = useDispatch();
   const charactersList = useSelector(state => state.characters.charactersList);
 
   useEffect(() => {
-    dispatch(getCharactersList());
+   //dispatch(getCharactersList());
   }, [dispatch])
 
 
@@ -29,4 +29,4 @@ const CharactersPage = () => {
   );
 
 }
-export default CharactersPage;
+export default LocationsPage;

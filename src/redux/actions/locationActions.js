@@ -1,6 +1,6 @@
 
 import {
-    SET_LOCATIONS, SET_LOCATION_PAGE
+    SET_LOCATIONS, SET_LOCATION_PAGE, SET_LOCATION_DETAILS_URL
   } from "./actionTypes";
   
   
@@ -16,5 +16,12 @@ import {
     return {
       type: SET_LOCATION_PAGE,
       payload: loc
+    }
+  }
+
+  export const setLocationDetailsUrlAction = (url) => {
+    return {
+      type: SET_LOCATION_DETAILS_URL,
+      payload: url
     }
   }
