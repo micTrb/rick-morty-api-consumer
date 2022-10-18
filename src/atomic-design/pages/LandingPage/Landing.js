@@ -18,7 +18,7 @@ const Landing = () => {
 
       <div className="text-center font-semibold sm:text-4xl text-5xl pt-24">
         <Link to="/characters"><p className="link-par text-center p-4">Characters</p></Link>
-        <Link to="/characters"><p className="link-par text-center p-4">Locations</p></Link>
+        <Link to="/locations"><p className="link-par text-center p-4">Locations</p></Link>
         <Link to="/characters"><p className="link-par text-center p-4">Episodes</p></Link>
       </div>
     </div>

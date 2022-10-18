@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import '../../../style/global.css';
 
-import { getCharactersList } from "../../../requests-methods/characters";
+import { getCharactersList, getNextCharactersList, getPrevCharactersList } from "../../../requests-methods/characters";
 import CharactersGrid from "../../organisms/Grid/CharactersGrid";
 import Paginator from '../../molecules/Paginator/Paginator';
 
@@ -23,7 +23,7 @@ const CharactersPage = () => {
       <h5 className="text-center text-white font-semibold sm:text-6xl text-4xl pt-24 pb-8">
         All characters
       </h5>
-      <Paginator />
+      <Paginator nextHandler={getNextCharactersList} prevHandler={getPrevCharactersList}/>
       <CharactersGrid characters={charactersList} />
     </div>
   );

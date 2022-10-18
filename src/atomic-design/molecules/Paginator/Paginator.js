@@ -5,17 +5,17 @@ import { incrementPageAction, decrementPageAction } from '../../../redux/actions
 
 import { getPrevCharactersList, getNextCharactersList } from "../../../requests-methods/characters";
 
-const Paginator = () => {
+const Paginator = ({prevHandler, nextHandler}) => {
 
     const dispatch = useDispatch();
     const pageInfos = useSelector(state => state.page.pageInfos);
 
     const incrementPage = () => {
-        dispatch(getNextCharactersList(pageInfos.next));
+        dispatch(nextHandler(pageInfos.next));
     }
 
     const decrementPage = () => {
-        dispatch(getPrevCharactersList(pageInfos.prev));
+        dispatch(prevHandler(pageInfos.prev));
     }
 
     return (
