@@ -6,6 +6,8 @@ import '../../../style/global.css';
 import { getCharactersList, getNextCharactersList, getPrevCharactersList } from "../../../requests-methods/characters";
 import CharactersGrid from "../../organisms/Grid/CharactersGrid";
 import Paginator from '../../molecules/Paginator/Paginator';
+import Navbar from '../../organisms/Navbar/Navbar';
+import Footer from '../../organisms/Footer/Footer';
 
 const CharactersPage = () => {
   const dispatch = useDispatch();
@@ -18,13 +20,17 @@ const CharactersPage = () => {
 
 
   return (
-    <div className="container px-2 py-24 mx-auto">
-      <Link to="/"><p className="pl-12 text-white text-2xl">← Home page</p></Link>
-      <h5 className="text-center text-white font-semibold sm:text-6xl text-4xl pt-24 pb-8">
-        All characters
-      </h5>
-      <Paginator nextHandler={getNextCharactersList} prevHandler={getPrevCharactersList}/>
-      <CharactersGrid characters={charactersList} />
+    <div>
+      <Navbar/>
+      <div className="mx-auto">
+
+        <h5 className="text-center text-white font-semibold sm:text-6xl text-4xl pt-24 pb-8">
+          All characters
+        </h5>
+        <Paginator nextHandler={getNextCharactersList} prevHandler={getPrevCharactersList} />
+        <CharactersGrid characters={charactersList} />
+      </div>
+      <Footer/>
     </div>
   );
 

@@ -3,30 +3,37 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import '../../../style/global.css';
 
-import { getCharactersList } from "../../../requests-methods/characters";
 import CharactersGrid from "../../organisms/Grid/CharactersGrid";
 import Paginator from '../../molecules/Paginator/Paginator';
+import LocationsGrid from '../../organisms/Locations/LocationsGrid';
+import { getNextLocationList, setLocations, getPrevLocationList } from '../../../requests-methods/locations';
+import Navbar from '../../organisms/Navbar/Navbar';
+import { getNextEpisodeList, setEpisodes, getPrevEpisodeList } from '../../../requests-methods/episodes';
+import EpisodesGrid from '../../organisms/Episodes/EpisodesGrid';
+import Footer from "../../organisms/Footer/Footer";
 
-const EpisodesPage = () => {
+const LocationsPage = () => {
   const dispatch = useDispatch();
-  const charactersList = useSelector(state => state.characters.charactersList);
+  const episodesList = useSelector(state => state.episodes.episodesList);
 
   useEffect(() => {
-    //dispatch(getCharactersList());
+    dispatch(setEpisodes()); 
   }, [dispatch])
 
-
-
   return (
-    <div className="container px-2 py-24 mx-auto">
-      <Link to="/"><p className="pl-12 text-white text-2xl">← Home page</p></Link>
-      <h5 className="text-center text-white font-semibold sm:text-6xl text-4xl pt-24 pb-8">
-        All characters
-      </h5>
-      <Paginator />
-      <CharactersGrid characters={charactersList} />
+    <div>
+      <Navbar /> 
+      <div className="mx-auto">
+
+        <h5 className="text-center text-white font-semibold sm:text-6xl text-4xl pt-24 pb-8">
+          All episodes
+        </h5>
+        <Paginator nextHandler={getNextEpisodeList} prevHandler={getPrevEpisodeList} />
+        <EpisodesGrid episodes={episodesList} />
+      </div>
+      <Footer/>
     </div>
   );
 
 }
-export default EpisodesPage;
+export default LocationsPage;

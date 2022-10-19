@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import classnames from "classnames";
-import { getLocation, getLocationDetailsGET } from '../../../requests-methods/locations';
-import { Link } from 'react-router-dom';
-import { setLocationDetailsUrlAction } from '../../../redux/actions/locationActions';
-import history from '../../../services/history';
 
 const DetailsCard = (props) => {
 
@@ -23,9 +19,6 @@ const DetailsCard = (props) => {
 
   const dispatch = useDispatch();
 
-  const handleGetLocationDetails = () => {
-    dispatch(getLocationDetailsGET(origin.name, origin.url));
-  }
 
   const statusLabel = (status) => {
     if (status === 'Dead') { return 'Dead' }

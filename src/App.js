@@ -8,7 +8,7 @@ import Landing from './atomic-design/pages/LandingPage/Landing';
 import CharacterDetailsPage from './atomic-design/pages/Characters/CharacterDetailsPage';
 import CharactersPage from './atomic-design/pages/Characters/CharactersPage';
 import LocationsPage from './atomic-design/pages/Locations/LocationsPage';
-import LocationDetailsPage from './atomic-design/pages/Locations/LocationDetailsPage';
+import EpisodesPage from './atomic-design/pages/Episodes/EpisodesPage';
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
           <Route exact path="/characters/:id" element={<CharacterDetailsPage />} />
 
           <Route exact path="/locations" element={<LocationsPage />} />
-          <Route exact path="/locations/:name" element={<LocationDetailsPage />} />
+          <Route exact path="/episodes" element={<EpisodesPage />} />
+
         </Routes>
       </BrowserRouter>
     </div>

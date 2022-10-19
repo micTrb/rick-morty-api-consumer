@@ -1,5 +1,4 @@
-import { SET_PAGE } from "./actionTypes"
-
+import { SET_PAGE } from './actionTypes';
 
 export const setPageAction = (pageInfos) => {
   return {
@@ -8,9 +7,3 @@ export const setPageAction = (pageInfos) => {
   }
 
 }
-
-// export const decrementPageAction = () => {
-//   return {
-//     type: DECREMENT_PAGE,
-//   }
-// }
